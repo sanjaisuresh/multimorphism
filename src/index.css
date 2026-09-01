@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-lighter: #CCF4FE;
+    --primary-light: #68CDF9;
+    --primary-default: #078DEE;
+    --primary-dark: #0351AB;
+    --primary-darker: #012972;
+    --font-family: 'Outfit', sans-serif;
+    
+    /* Light Mode Variables */
+    --bgbase: #f1f5f9;
+    --clay: #ffffff;
+    --text-dark: #0f172a;
+    
+    --shadow-clay-base: 8px 8px 16px #cbd5e1, -8px -8px 16px #ffffff, inset 2px 2px 4px rgba(255, 255, 255, 0.7), inset -2px -2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-clay-hover: 12px 12px 24px #cbd5e1, -12px -12px 24px #ffffff, inset 2px 2px 4px rgba(255, 255, 255, 0.8), inset -2px -2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-clay-active: inset 6px 6px 12px #cbd5e1, inset -6px -6px 12px #ffffff;
+    --shadow-clay-btn: 5px 5px 10px #cbd5e1, -5px -5px 10px #ffffff, inset 1px 1px 2px rgba(255, 255, 255, 0.7), inset -1px -1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-clay-primary: 5px 5px 10px #cbd5e1, -5px -5px 10px #ffffff, inset 2px 2px 4px rgba(255, 255, 255, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .dark {
+    /* Dark Mode Variables */
+    --bgbase: #0f172a;
+    --clay: #1e293b;
+    --text-dark: #f8fafc;
+    
+    --shadow-clay-base: 8px 8px 16px #0b1121, -8px -8px 16px #314155, inset 2px 2px 4px rgba(255, 255, 255, 0.05), inset -2px -2px 4px rgba(0, 0, 0, 0.4);
+    --shadow-clay-hover: 12px 12px 24px #0b1121, -12px -12px 24px #314155, inset 2px 2px 4px rgba(255, 255, 255, 0.08), inset -2px -2px 4px rgba(0, 0, 0, 0.5);
+    --shadow-clay-active: inset 6px 6px 12px #0b1121, inset -6px -6px 12px #314155;
+    --shadow-clay-btn: 5px 5px 10px #0b1121, -5px -5px 10px #314155, inset 1px 1px 2px rgba(255, 255, 255, 0.05), inset -1px -1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-clay-primary: 5px 5px 10px #0b1121, -5px -5px 10px #314155, inset 2px 2px 4px rgba(255, 255, 255, 0.1), inset -2px -2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  [data-theme="yellow"] {
+    --primary-lighter: #FFF9C4;
+    --primary-light: #FFF176;
+    --primary-default: #FFDF00;
+    --primary-dark: #FBC02D;
+    --primary-darker: #F57F17;
+  }
+
+  [data-theme="purple"] {
+    --primary-lighter: #F3E8FF;
+    --primary-light: #D8B4FE;
+    --primary-default: #A855F7;
+    --primary-dark: #7E22CE;
+    --primary-darker: #581C87;
+  }
+  
+  [data-theme="green"] {
+    --primary-lighter: #DCFCE7;
+    --primary-light: #86EFAC;
+    --primary-default: #22C55E;
+    --primary-dark: #15803D;
+    --primary-darker: #14532D;
+  }
+
+  [data-theme="blue"] {
+    --primary-lighter: #D1E9FF;
+    --primary-light: #74C0FC;
+    --primary-default: #1890FF;
+    --primary-dark: #0958D9;
+    --primary-darker: #002C8C;
+  }
+
+  [data-theme="orange"] {
+    --primary-lighter: #FFE8D6;
+    --primary-light: #FFB088;
+    --primary-default: #FA541C;
+    --primary-dark: #D4380D;
+    --primary-darker: #871400;
+  }
+
+  [data-theme="red"] {
+    --primary-lighter: #FFE3E3;
+    --primary-light: #FF7875;
+    --primary-default: #F5222D;
+    --primary-dark: #CF1322;
+    --primary-darker: #A8071A;
+  }
+
+  body {
+    @apply bg-bgbase text-dark font-sans h-screen overflow-hidden transition-colors duration-300;
+    font-family: var(--font-family);
+  }
+}
+
+@layer utilities {
+  .rounded-clay {
+    border-radius: 20px;
+  }
+  
+  /* Glassmorphism Background Animation */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .bg-glass-animated {
+    background: linear-gradient(
+      -45deg, 
+      var(--primary-lighter, #F3E8FF), 
+      var(--primary-light, #D8B4FE), 
+      #ffffff, 
+      var(--primary-lighter, #CCF4FE)
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  /* For dark mode glassmorphism */
+  .dark .bg-glass-animated {
+    background: linear-gradient(
+      -45deg, 
+      #0f172a, 
+      var(--primary-dark, #7e22ce), 
+      #1e293b, 
+      var(--primary-darker, #3b82f6)
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+}
