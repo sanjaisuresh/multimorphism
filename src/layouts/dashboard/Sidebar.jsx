@@ -1,9 +1,10 @@
 import { observer } from 'mobx-react-lite'
 import { useStore } from '@/store'
-import { Database, Home, Zap, Layers, User } from 'lucide-react'
+import { Home, Zap, Layers, User } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import { useTheme } from '@/providers/ThemeProvider'
 import { cn } from '@/utils'
+import { AppLogo } from '@/components/layout/AppLogo'
 
 const Sidebar = observer(({ isMobile = false }) => {
   const { layoutStore } = useStore()
@@ -22,11 +23,8 @@ const Sidebar = observer(({ isMobile = false }) => {
   return (
     <aside className={cn(styles.layout.sidebar.container, `${isMobile ? 'flex' : 'hidden md:flex'} ${isMini && !isMobile ? 'w-20' : 'w-64'}`)}>
       <div className={`flex flex-col h-full p-5 ${isMini && !isMobile ? 'items-center px-2' : ''}`}>
-        <div className={`flex items-center gap-3 mb-8 mt-2 ${isMini && !isMobile ? 'justify-center' : 'px-2'}`}>
-          <div className="w-9 h-9 bg-clay rounded-xl shadow-clay-btn flex items-center justify-center text-primary flex-shrink-0">
-            <Database size={20} />
-          </div>
-          {(!isMini || isMobile) && <h1 className="text-xl font-bold tracking-tight text-dark whitespace-nowrap">{import.meta.env.VITE_APP_NAME || 'Multimorphism'}</h1>}
+        <div className={`mb-8 mt-2 ${isMini && !isMobile ? 'flex justify-center' : 'px-2'}`}>
+          <AppLogo showText={!isMini || isMobile} />
         </div>
 
         <nav className="flex-1 flex flex-col gap-2 w-full">

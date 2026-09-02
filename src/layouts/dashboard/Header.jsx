@@ -4,6 +4,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '@/store'
 import { useTheme } from '@/providers/ThemeProvider'
+import { AppLogo } from '@/components/layout/AppLogo'
 
 const Header = observer(() => {
   const { authStore, layoutStore } = useStore()
@@ -33,7 +34,13 @@ const Header = observer(() => {
             <Menu size={18} />
           </button>
           
-          {layoutStore.breadCrumb && (
+          {layoutStore.themeLayout === 'horizontal' && (
+            <div className="hidden md:flex">
+              <AppLogo />
+            </div>
+          )}
+
+          {layoutStore.breadCrumb && layoutStore.themeLayout !== 'horizontal' && (
              <div className="hidden md:flex items-center text-sm font-semibold text-gray-500 whitespace-nowrap mr-2">
                 <Link to="/" className="hover:text-primary hover:underline transition-all">Dashboard</Link> &nbsp;&nbsp;/&nbsp;&nbsp; <span className="text-primary ml-2">{pageName}</span>
              </div>

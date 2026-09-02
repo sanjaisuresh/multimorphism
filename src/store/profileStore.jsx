@@ -12,8 +12,8 @@ class ProfileStore {
     avatar: "SS",
     cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     about: "Passionate about building beautiful, interactive user interfaces with modern web technologies. Exploring Claymorphism and 3D UI designs.",
-    location: "New York, NY",
-    email: "sanjai.suresh@example.com",
+    location: "India, Coimbatore",
+    email: "sanjaisuresh1062@gmail.com",
     website: "https://example.com",
     socials: {
       github: "https://github.com/sanjaisuresh",

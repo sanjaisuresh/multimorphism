@@ -6,7 +6,7 @@ import { TypographyH2, TypographyH3, TypographyP } from '@/components/ui/typogra
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { MapPin, Mail, Globe, Github, Twitter, Linkedin, Edit2, Users, Briefcase, Plus } from 'lucide-react'
+import { MapPin, Mail, Globe, Github, Linkedin, Edit2, Users, Briefcase, Plus } from 'lucide-react'
 import { useTheme } from '@/providers/ThemeProvider'
 
 const Profile = observer(() => {
@@ -81,16 +81,8 @@ const Profile = observer(() => {
                 <MapPin size={18} className="text-primary" />
                 <span className="font-medium">{user.location}</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-600">
-                <Mail size={18} className="text-primary" />
-                <span className="font-medium">{user.email}</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-600">
-                <Globe size={18} className="text-primary" />
-                <a href={user.website} className="font-medium hover:text-primary transition-colors">Website</a>
-              </div>
-              
-              <div className="h-px w-full bg-gray-200 dark:bg-white/10 my-2" />
+
+              <div className="h-px w-full bg-gray-200 dark:bg-white/10 my-2 mt-4" />
               
               <TypographyH3 className="text-lg">Social</TypographyH3>
               <div className="flex gap-4">
@@ -98,9 +90,9 @@ const Profile = observer(() => {
                    style={!pStyles.socialLink.includes('text-') ? { color: 'var(--text-dark)' } : {}}>
                   <Github size={20} />
                 </a>
-                <a href={user.socials.twitter} className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${pStyles.socialLink}`}
-                   style={!pStyles.socialLink.includes('text-') ? { color: '#1DA1F2' } : {}}>
-                  <Twitter size={20} />
+                <a href={`mailto:${user.email}`} className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${pStyles.socialLink}`}
+                   style={!pStyles.socialLink.includes('text-') ? { color: '#EA4335' } : {}}>
+                  <Mail size={20} />
                 </a>
                 <a href={user.socials.linkedin} className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${pStyles.socialLink}`}
                    style={!pStyles.socialLink.includes('text-') ? { color: '#0A66C2' } : {}}>
