@@ -110,81 +110,52 @@ const Profile = observer(() => {
               <TypographyH3>Connections</TypographyH3>
               <span className={`text-sm font-semibold px-3 py-1 rounded-full ${pStyles.connectionCount}`} style={!pStyles.connectionCount.includes('text-') ? { color: 'var(--primary-default)' } : {}}>{connections.length} people</span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-              {connections.map(conn => (
-                <div key={conn.id} className={`flex items-center justify-between p-4 rounded-2xl ${pStyles.connectionItem}`}>
-                  <div className="flex items-center gap-4">
-                    <Avatar className="w-12 h-12">
-                      {conn.avatar?.startsWith('http') ? (
-                        <AvatarImage src={conn.avatar} />
-                      ) : (
-                        <AvatarFallback>{conn.avatar}</AvatarFallback>
-                      )}
-                    </Avatar>
-                    <div>
-                      <h4 className="font-bold text-dark">{conn.name}</h4>
-                      <span className="text-sm text-gray-500 font-medium">{conn.role}</span>
-                    </div>
-                  </div>
-                  <Button variant={conn.following ? "outline" : "default"} size="sm" className={conn.following ? 'shadow-clay-inner' : 'shadow-clay-primary'}>
-                    {conn.following ? "Following" : "Follow"}
-                  </Button>
-                </div>
-              ))}
+            <div className="flex flex-col items-center justify-center p-10 text-center border-2 border-dashed border-gray-200 dark:border-white/10 rounded-3xl mt-4">
+              <Users size={48} className="text-gray-400 mb-4" />
+              <TypographyH3 className="mb-2 text-xl">No connections yet</TypographyH3>
+              <TypographyP className="mb-6 max-w-sm mx-auto text-gray-500">Connect with other developers to share knowledge, collaborate on open source, and build amazing UI.</TypographyP>
+              <Button className="shadow-clay-primary"><Plus size={16} className="mr-2"/> Find Connections</Button>
             </div>
           </Card>
         </TabsContent>
         
         {/* Projects Tab */}
         <TabsContent value="projects" className="outline-none">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map(project => (
-              <Card key={project.id} className="flex flex-col hover:scale-[1.02] transition-transform">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${pStyles.projectIcon}`}
-                     style={!pStyles.projectIcon.includes('bg-') ? { backgroundColor: 'var(--primary-lighter)', color: 'var(--primary-default)' } : {}}>
-                  <Briefcase size={20} />
-                </div>
-                <h4 className="font-bold text-lg text-dark mb-2">{project.title || project.flow}</h4>
-                <TypographyP className="text-sm mb-6 flex-1">{project.desc}</TypographyP>
-                
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="font-semibold text-gray-500">Progress</span>
-                    <span className="font-bold text-primary">{project.progress}%</span>
-                  </div>
-                  <div className={`w-full h-2 rounded-full overflow-hidden ${pStyles.progressTrack}`}>
-                    <div className="h-full bg-primary" style={{ width: `${project.progress}%` }} />
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100 dark:border-white/5">
-                  <div className="flex -space-x-2">
-                    {project.team.map((avatar, i) => (
-                      <Avatar key={i} className={`w-8 h-8 ${pStyles.avatarBorder}`}>
-                        {avatar?.startsWith('http') ? (
-                          <AvatarImage src={avatar} />
-                        ) : (
-                          <AvatarFallback className="text-[10px]">{avatar}</AvatarFallback>
-                        )}
-                      </Avatar>
-                    ))}
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center z-10 ${pStyles.progressTrack}`}>
-                      <Plus size={14} className="text-primary" />
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm" className="h-8 shadow-clay-base hover:shadow-clay-inner text-xs">View</Button>
-                </div>
-              </Card>
-            ))}
+          <Card className={`relative overflow-hidden p-8 md:p-10 flex flex-col items-start gap-4 ${pStyles.projectIcon}`} style={!pStyles.projectIcon.includes('bg-') ? { backgroundColor: 'var(--primary-lighter)' } : {}}>
+            <div className="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
+              <Github size={200} />
+            </div>
             
-            <Card className={`flex flex-col items-center justify-center transition-all cursor-pointer flex-col p-6 rounded-xl ${pStyles.newProjectCard}`}>
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${pStyles.progressTrack}`} style={!pStyles.progressTrack.includes('text-') ? { color: 'var(--primary-default)' } : {}}>
-                <Plus size={24} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary font-bold text-sm mb-2">
+              <Globe size={16} /> Open Source
+            </div>
+            
+            <TypographyH2 className="text-3xl md:text-4xl font-black border-none pb-0 text-dark">
+              create-multimorphism
+            </TypographyH2>
+            
+            <TypographyP className="text-lg max-w-2xl text-gray-600 dark:text-gray-300 font-medium leading-relaxed">
+              We just open-sourced our entire frontend architecture! You can now scaffold this exact React dashboard—complete with 14 trending design styles, MobX state management, and perfect responsive routing—instantly from your terminal.
+            </TypographyP>
+
+            <div className="mt-6 flex flex-col md:flex-row gap-4 w-full md:w-auto z-10">
+              <div className="flex items-center bg-black dark:bg-black/40 text-white font-mono px-6 py-4 rounded-xl shadow-clay-base overflow-x-auto border border-white/10">
+                <span className="text-green-400 mr-3">❯</span>
+                npm create multimorphism@latest
               </div>
-              <h4 className="font-bold text-dark">Create New Project</h4>
-              <span className="text-sm text-gray-500 mt-2">Start a new blank project</span>
-            </Card>
-          </div>
+            </div>
+            
+            <div className="mt-4 flex items-center gap-4 z-10">
+              <a href="https://www.npmjs.com/package/create-multimorphism" target="_blank" rel="noreferrer">
+                <Button className="shadow-clay-primary">View on NPM</Button>
+              </a>
+              <a href="https://github.com/sanjaisuresh/multimorphism" target="_blank" rel="noreferrer">
+                <Button variant="outline" className="shadow-clay-base hover:shadow-clay-inner bg-white/50 backdrop-blur-sm dark:bg-black/50">
+                  <Github size={18} className="mr-2" /> View Source
+                </Button>
+              </a>
+            </div>
+          </Card>
         </TabsContent>
       </Tabs>
     </div>
