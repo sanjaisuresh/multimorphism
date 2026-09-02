@@ -26,7 +26,7 @@ const Sidebar = observer(({ isMobile = false }) => {
           <div className="w-9 h-9 bg-clay rounded-xl shadow-clay-btn flex items-center justify-center text-primary flex-shrink-0">
             <Database size={20} />
           </div>
-          {(!isMini || isMobile) && <h1 className="text-xl font-bold tracking-tight text-dark whitespace-nowrap">DataTool</h1>}
+          {(!isMini || isMobile) && <h1 className="text-xl font-bold tracking-tight text-dark whitespace-nowrap">{import.meta.env.VITE_APP_NAME || 'Multimorphism'}</h1>}
         </div>
 
         <nav className="flex-1 flex flex-col gap-2 w-full">

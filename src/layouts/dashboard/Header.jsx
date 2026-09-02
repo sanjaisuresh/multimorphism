@@ -1,25 +1,23 @@
 import React, { useState } from 'react'
-import { Menu, Search, Bell, Settings, X, Moon, Sun, Maximize, LayoutTemplate, LayoutPanelLeft, List } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Menu, Search, Bell, Settings, LogIn, LogOut } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '@/store'
-import { Card } from '@/components/ui/card'
 import { useTheme } from '@/providers/ThemeProvider'
 
 const Header = observer(() => {
-  const { themeStore, layoutStore } = useStore()
+  const { authStore, layoutStore } = useStore()
   const { styles } = useTheme()
+  const navigate = useNavigate()
 
-  const presets = [
-    { name: 'cyan', color: '#078DEE' },
-    { name: 'blue', color: '#1890FF' },
-    { name: 'purple', color: '#A855F7' },
-    { name: 'green', color: '#22C55E' },
-    { name: 'orange', color: '#FA541C' },
-    { name: 'red', color: '#F5222D' },
-  ]
+  const handleLogout = () => {
+    authStore.logout()
+    navigate('/login')
+  }
 
-  const fonts = ['Outfit', 'Inter', 'Roboto', 'Open Sans']
+  const handleLogin = () => {
+    navigate('/login')
+  }
 
   return (
     <>
@@ -54,6 +52,14 @@ const Header = observer(() => {
           <Link to="/profile" className="w-9 h-9 rounded-full overflow-hidden ml-2 cursor-pointer shadow-sm block bg-bgbase flex items-center justify-center font-bold text-primary border-2 border-white">
             SS
           </Link>
+
+          <button 
+            onClick={authStore.isAuthenticated ? handleLogout : handleLogin}
+            className="bg-bgbase rounded-full w-9 h-9 flex items-center justify-center transition-all duration-200 text-gray-600 hover:shadow-inner hover:text-primary ml-1"
+            title={authStore.isAuthenticated ? "Logout" : "Login"}
+          >
+            {authStore.isAuthenticated ? <LogOut size={18} /> : <LogIn size={18} />}
+          </button>
         </div>
       </header>
     </>

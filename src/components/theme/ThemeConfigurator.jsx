@@ -34,16 +34,16 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
       <div className="flex flex-col gap-4 mb-2">
         <TypographyH3>Design Style</TypographyH3>
         <TypographyP className="text-sm text-gray-500 -mt-2 mb-2">Select your UI aesthetic. Each button previews its own style!</TypographyP>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {/* Claymorphism Preview */}
           <button 
             onClick={() => {
               setTheme('claymorphism')
               themeStore.setThemeColorPresets('blue')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-clay rounded-2xl shadow-[5px_5px_10px_#0b1121,-5px_-5px_10px_#314155,inset_2px_2px_4px_rgba(255,255,255,0.1)] hover:scale-105 ${themeName === 'claymorphism' ? 'ring-2 ring-primary ring-offset-2 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-clay rounded-2xl shadow-[5px_5px_10px_#0b1121,-5px_-5px_10px_#314155,inset_2px_2px_4px_rgba(255,255,255,0.1)] hover:scale-105 px-2 ${themeName === 'claymorphism' ? 'ring-2 ring-primary ring-offset-2 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-semibold text-sm text-primary">Claymorphism</span>
+            <span className="font-semibold text-sm text-primary w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Claymorphism</span>
           </button>
           
           {/* Neo-Brutalism Preview */}
@@ -52,9 +52,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('neobrutalism')
               themeStore.setThemeColorPresets('yellow')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-[#FFDF00] border-4 border-black text-black font-bold uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none ${themeName === 'neobrutalism' ? 'outline outline-4 outline-black outline-offset-4' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-[#FFDF00] border-4 border-black text-black font-bold uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none px-2 ${themeName === 'neobrutalism' ? 'outline outline-4 outline-black outline-offset-4' : ''}`}
           >
-            <span className="text-sm">Neo-Brutalism</span>
+            <span className="text-sm w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Neo-Brutalism</span>
           </button>
           
           {/* Glassmorphism Preview */}
@@ -63,9 +63,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('glassmorphism')
               themeStore.setThemeColorPresets('purple')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-white/40 dark:bg-white/10 backdrop-blur-md rounded-2xl border border-white/60 dark:border-white/20 shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:bg-white/60 hover:-translate-y-1 ${themeName === 'glassmorphism' ? 'ring-2 ring-white ring-offset-2 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-white/40 dark:bg-white/10 backdrop-blur-md rounded-2xl border border-white/60 dark:border-white/20 shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:bg-white/60 hover:-translate-y-1 px-2 ${themeName === 'glassmorphism' ? 'ring-2 ring-white ring-offset-2 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-semibold text-sm text-gray-800 dark:text-gray-100 drop-shadow-sm">Glassmorphism</span>
+            <span className="font-semibold text-sm text-gray-800 dark:text-gray-100 drop-shadow-sm w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Glassmorphism</span>
           </button>
           
           {/* Neumorphism Preview */}
@@ -74,9 +74,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('neumorphism')
               themeStore.setThemeColorPresets('cyan')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-[#e0e5ec] dark:bg-[#1a1b1e] rounded-2xl shadow-[8px_8px_16px_#b8bcc2,-8px_-8px_16px_#ffffff] dark:shadow-[8px_8px_16px_#0d0e0f,-8px_-8px_16px_#27282d] hover:shadow-[inset_8px_8px_16px_#b8bcc2,inset_-8px_-8px_16px_#ffffff] dark:hover:shadow-[inset_8px_8px_16px_#0d0e0f,inset_-8px_-8px_16px_#27282d] ${themeName === 'neumorphism' ? 'ring-2 ring-primary ring-offset-2 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-[#e0e5ec] dark:bg-[#1a1b1e] rounded-2xl shadow-[8px_8px_16px_#b8bcc2,-8px_-8px_16px_#ffffff] dark:shadow-[8px_8px_16px_#0d0e0f,-8px_-8px_16px_#27282d] hover:shadow-[inset_8px_8px_16px_#b8bcc2,inset_-8px_-8px_16px_#ffffff] dark:hover:shadow-[inset_8px_8px_16px_#0d0e0f,inset_-8px_-8px_16px_#27282d] px-2 ${themeName === 'neumorphism' ? 'ring-2 ring-primary ring-offset-2 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-semibold text-sm text-[#4a5568] dark:text-[#a0aec0]">Neumorphism</span>
+            <span className="font-semibold text-sm text-[#4a5568] dark:text-[#a0aec0] w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Neumorphism</span>
           </button>
 
           {/* Retro/Cyberpunk Preview */}
@@ -86,9 +86,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               themeStore.setThemeColorPresets('green')
               themeStore.setThemeMode('dark') // Cyberpunk is best in dark mode
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-[#09090b] rounded-2xl border-2 border-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.5),inset_0_0_10px_rgba(6,182,212,0.2)] hover:bg-[#131316] ${themeName === 'retro' ? 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-bgbase scale-105' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-[#09090b] rounded-2xl border-2 border-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.5),inset_0_0_10px_rgba(6,182,212,0.2)] hover:bg-[#131316] px-2 ${themeName === 'retro' ? 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-bgbase scale-105' : ''}`}
           >
-            <span className="font-bold text-sm text-cyan-400 tracking-wider" style={{ textShadow: '0 0 8px rgba(6,182,212,0.8)' }}>RETRO</span>
+            <span className="font-bold text-sm text-cyan-400 tracking-wider w-full overflow-hidden text-ellipsis whitespace-nowrap text-center" style={{ textShadow: '0 0 8px rgba(6,182,212,0.8)' }}>RETRO</span>
           </button>
           
           {/* Bauhaus/Minimalist Preview */}
@@ -97,9 +97,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('bauhaus')
               themeStore.setThemeColorPresets('red')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-white dark:bg-black rounded-none border-l-8 border-red-500 shadow-sm hover:shadow-md hover:translate-x-1 ${themeName === 'bauhaus' ? 'ring-1 ring-black dark:ring-white ring-offset-4 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-white dark:bg-black rounded-none border-l-8 border-red-500 shadow-sm hover:shadow-md hover:translate-x-1 px-2 ${themeName === 'bauhaus' ? 'ring-1 ring-black dark:ring-white ring-offset-4 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-bold text-sm text-black dark:text-white uppercase tracking-widest font-sans">Bauhaus</span>
+            <span className="font-bold text-sm text-black dark:text-white uppercase tracking-widest font-sans w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Bauhaus</span>
           </button>
 
           {/* Bento Box Preview */}
@@ -108,9 +108,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('bento')
               themeStore.setThemeColorPresets('blue')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-[#F2F2F7] dark:bg-[#1C1C1E] rounded-[2rem] border border-black/5 dark:border-white/5 shadow-sm hover:shadow-md hover:scale-105 ${themeName === 'bento' ? 'ring-2 ring-primary ring-offset-2 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-[#F2F2F7] dark:bg-[#1C1C1E] rounded-[2rem] border border-black/5 dark:border-white/5 shadow-sm hover:shadow-md hover:scale-105 px-2 ${themeName === 'bento' ? 'ring-2 ring-primary ring-offset-2 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-semibold text-sm text-black dark:text-white">Bento Box</span>
+            <span className="font-semibold text-sm text-black dark:text-white w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Bento Box</span>
           </button>
 
           {/* Material You Preview */}
@@ -119,9 +119,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('material')
               themeStore.setThemeColorPresets('green')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-[#F3F4E9] dark:bg-[#2F3127] rounded-full shadow-sm hover:bg-[#E8E9DB] dark:hover:bg-[#3F4135] ${themeName === 'material' ? 'ring-2 ring-[#76786A] dark:ring-[#909281] ring-offset-2 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-[#F3F4E9] dark:bg-[#2F3127] rounded-full shadow-sm hover:bg-[#E8E9DB] dark:hover:bg-[#3F4135] px-2 ${themeName === 'material' ? 'ring-2 ring-[#76786A] dark:ring-[#909281] ring-offset-2 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-medium text-sm text-[#1C1C17] dark:text-[#E6E2D9]">Material You</span>
+            <span className="font-medium text-sm text-[#1C1C17] dark:text-[#E6E2D9] w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Material You</span>
           </button>
 
           {/* Aurora Preview */}
@@ -130,9 +130,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('aurora')
               themeStore.setThemeColorPresets('purple')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-gradient-to-br from-purple-400/30 to-blue-400/30 backdrop-blur-xl rounded-[2rem] border border-white/40 shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] ${themeName === 'aurora' ? 'ring-2 ring-white ring-offset-2 ring-offset-bgbase scale-105' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-gradient-to-br from-purple-400/30 to-blue-400/30 backdrop-blur-xl rounded-[2rem] border border-white/40 shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] px-2 ${themeName === 'aurora' ? 'ring-2 ring-white ring-offset-2 ring-offset-bgbase scale-105' : ''}`}
           >
-            <span className="font-bold text-sm text-white drop-shadow-md">Aurora</span>
+            <span className="font-bold text-sm text-white drop-shadow-md w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Aurora</span>
           </button>
 
           {/* Frutiger Aero Preview */}
@@ -141,9 +141,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('frutigeraero')
               themeStore.setThemeColorPresets('cyan')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-gradient-to-b from-white to-[#E0F2FE] dark:from-[#1A2E44] dark:to-[#112233] rounded-full border border-white/50 shadow-[inset_0_2px_10px_rgba(255,255,255,0.8),0_4px_10px_rgba(0,0,0,0.1)] hover:scale-105 ${themeName === 'frutigeraero' ? 'ring-2 ring-cyan-500 ring-offset-2 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-gradient-to-b from-white to-[#E0F2FE] dark:from-[#1A2E44] dark:to-[#112233] rounded-full border border-white/50 shadow-[inset_0_2px_10px_rgba(255,255,255,0.8),0_4px_10px_rgba(0,0,0,0.1)] hover:scale-105 px-2 ${themeName === 'frutigeraero' ? 'ring-2 ring-cyan-500 ring-offset-2 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-bold text-sm text-[#033A52] dark:text-[#E0F2FE]">Frutiger Aero</span>
+            <span className="font-bold text-sm text-[#033A52] dark:text-[#E0F2FE] w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Frutiger Aero</span>
           </button>
 
           {/* Skeuomorphism Preview */}
@@ -152,9 +152,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('skeuomorphism')
               themeStore.setThemeColorPresets('orange')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-gradient-to-b from-[#ffffff] to-[#e6e6e6] dark:from-[#333333] dark:to-[#1a1a1a] rounded-xl border border-[#cccccc] dark:border-[#111111] shadow-[inset_0_1px_0_rgba(255,255,255,1),0_4px_6px_rgba(0,0,0,0.2)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_6px_rgba(0,0,0,0.6)] active:translate-y-1 active:shadow-[inset_0_4px_6px_rgba(0,0,0,0.2)] ${themeName === 'skeuomorphism' ? 'ring-2 ring-orange-500 ring-offset-2 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-gradient-to-b from-[#ffffff] to-[#e6e6e6] dark:from-[#333333] dark:to-[#1a1a1a] rounded-xl border border-[#cccccc] dark:border-[#111111] shadow-[inset_0_1px_0_rgba(255,255,255,1),0_4px_6px_rgba(0,0,0,0.2)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_6px_rgba(0,0,0,0.6)] active:translate-y-1 active:shadow-[inset_0_4px_6px_rgba(0,0,0,0.2)] px-2 ${themeName === 'skeuomorphism' ? 'ring-2 ring-orange-500 ring-offset-2 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-bold text-sm text-[#333333] dark:text-[#cccccc] text-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">Skeuomorph</span>
+            <span className="font-bold text-sm text-[#333333] dark:text-[#cccccc] text-shadow-[0_1px_1px_rgba(255,255,255,0.8)] w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Skeuomorph</span>
           </button>
 
           {/* Wireframe Preview */}
@@ -163,9 +163,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('wireframe')
               themeStore.setThemeColorPresets('cyan')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-transparent rounded-none border-2 border-dashed border-[#000000] dark:border-[#ffffff] hover:bg-black/5 dark:hover:bg-white/5 ${themeName === 'wireframe' ? 'ring-2 ring-[#000000] dark:ring-[#ffffff] ring-offset-4 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-transparent rounded-none border-2 border-dashed border-[#000000] dark:border-[#ffffff] hover:bg-black/5 dark:hover:bg-white/5 px-2 ${themeName === 'wireframe' ? 'ring-2 ring-[#000000] dark:ring-[#ffffff] ring-offset-4 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-bold font-mono uppercase text-sm tracking-widest text-[#000000] dark:text-[#ffffff]">Wireframe</span>
+            <span className="font-bold font-mono uppercase text-sm tracking-widest text-[#000000] dark:text-[#ffffff] w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Wireframe</span>
           </button>
 
           {/* Monochrome Preview */}
@@ -174,9 +174,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('monochrome')
               themeStore.setThemeColorPresets('blue')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-white dark:bg-black rounded-none border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black group ${themeName === 'monochrome' ? 'ring-2 ring-black dark:ring-white ring-offset-2 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-white dark:bg-black rounded-none border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black group px-2 ${themeName === 'monochrome' ? 'ring-2 ring-black dark:ring-white ring-offset-2 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-bold text-sm text-black dark:text-white group-hover:text-white dark:group-hover:text-black uppercase">Monochrome</span>
+            <span className="font-bold text-sm text-black dark:text-white group-hover:text-white dark:group-hover:text-black uppercase w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Monochrome</span>
           </button>
 
           {/* Memphis Preview */}
@@ -185,9 +185,9 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
               setTheme('memphis')
               themeStore.setThemeColorPresets('yellow')
             }}
-            className={`h-20 flex items-center justify-center transition-all bg-[#ff6b6b] rounded-tl-[1.5rem] rounded-br-[1.5rem] border-4 border-black shadow-[4px_4px_0_0_#000000] hover:-translate-y-1 hover:translate-x-1 hover:shadow-[6px_6px_0_0_#000000] ${themeName === 'memphis' ? 'ring-2 ring-black ring-offset-4 ring-offset-bgbase' : ''}`}
+            className={`h-20 flex items-center justify-center transition-all bg-[#ff6b6b] rounded-tl-[1.5rem] rounded-br-[1.5rem] border-4 border-black shadow-[4px_4px_0_0_#000000] hover:-translate-y-1 hover:translate-x-1 hover:shadow-[6px_6px_0_0_#000000] px-2 ${themeName === 'memphis' ? 'ring-2 ring-black ring-offset-4 ring-offset-bgbase' : ''}`}
           >
-            <span className="font-black text-sm text-white uppercase tracking-wider">Memphis</span>
+            <span className="font-black text-sm text-white uppercase tracking-wider w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Memphis</span>
           </button>
         </div>
       </div>

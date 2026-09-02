@@ -2,11 +2,11 @@ import { observer } from 'mobx-react-lite'
 import { useStore } from '@/store'
 import Sidebar from './Sidebar'
 import Header from './Header'
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation, Link, Outlet } from 'react-router-dom'
 import { Sheet, SheetContent } from '@/components/ui/sheet'
 import { useTheme } from '@/providers/ThemeProvider'
 
-const DashboardLayout = observer(({ children }) => {
+const DashboardLayout = observer(() => {
   const { layoutStore } = useStore()
   const { themeLayout, themeStretch, sidebarOpen } = layoutStore
 
@@ -40,7 +40,7 @@ const DashboardLayout = observer(({ children }) => {
         )}
         <main className="flex-1 overflow-y-auto p-6">
           <div className={`mx-auto w-full h-full transition-all duration-300 ${themeStretch ? 'max-w-full' : 'max-w-[1200px]'}`}>
-            {children}
+            <Outlet />
           </div>
         </main>
       </div>

@@ -4,6 +4,7 @@ import LayoutStore from './layoutStore'
 
 import DashboardStore from './dashboardStore'
 import ProfileStore from './profileStore'
+import AuthStore from './authStore'
 
 class RootStore {
   constructor() {
@@ -11,6 +12,7 @@ class RootStore {
     this.layoutStore = new LayoutStore(this)
     this.dashboardStore = new DashboardStore(this)
     this.profileStore = new ProfileStore(this)
+    this.authStore = new AuthStore(this)
   }
 }
 

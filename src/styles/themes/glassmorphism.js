@@ -85,7 +85,7 @@ export const glassmorphismTheme = {
   badge: "inline-flex items-center rounded-full border border-white/40 dark:border-white/20 px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-white shadow-sm bg-white/30 dark:bg-black/30 backdrop-blur-md text-gray-800 dark:text-gray-100",
   popover: "z-50 w-72 rounded-2xl bg-white/30 dark:bg-black/30 backdrop-blur-xl p-4 text-gray-800 dark:text-gray-100 border border-white/40 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] outline-none animate-in zoom-in-95",
 
-  label: "text-sm font-medium text-white/70",
+  label: "text-sm font-medium text-gray-700 dark:text-gray-300 drop-shadow-sm",
   radio: {
       root: "grid gap-2",
       item: "aspect-square h-5 w-5 rounded-full border border-white/30 bg-white/10 backdrop-blur-md shadow-[0_4px_12px_rgba(0,0,0,0.1)] text-white data-[state=checked]:bg-white/40 data-[state=checked]:border-white/60 transition-all",
