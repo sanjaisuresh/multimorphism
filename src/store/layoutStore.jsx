@@ -6,7 +6,6 @@ class LayoutStore {
   themeStretch = localStorage.getItem('themeStretch') === 'true'
   breadCrumb = localStorage.getItem('breadCrumb') !== 'false'
   multiTab = localStorage.getItem('multiTab') === 'true'
-  darkSidebar = localStorage.getItem('darkSidebar') === 'true'
 
   constructor(rootStore) {
     this.rootStore = rootStore
@@ -16,7 +15,6 @@ class LayoutStore {
     reaction(() => this.themeStretch, stretch => localStorage.setItem('themeStretch', stretch.toString()))
     reaction(() => this.breadCrumb, val => localStorage.setItem('breadCrumb', val.toString()))
     reaction(() => this.multiTab, val => localStorage.setItem('multiTab', val.toString()))
-    reaction(() => this.darkSidebar, val => localStorage.setItem('darkSidebar', val.toString()))
   }
 
   toggleSidebar = () => {
@@ -41,10 +39,6 @@ class LayoutStore {
   
   setMultiTab = (show) => {
     this.multiTab = show
-  }
-  
-  setDarkSidebar = (dark) => {
-    this.darkSidebar = dark
   }
 }
 

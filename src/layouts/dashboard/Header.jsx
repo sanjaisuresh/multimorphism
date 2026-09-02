@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Menu, Search, Bell, Settings, LogIn, LogOut } from 'lucide-react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '@/store'
 import { useTheme } from '@/providers/ThemeProvider'
@@ -19,13 +19,25 @@ const Header = observer(() => {
     navigate('/login')
   }
 
+  const location = useLocation()
+  let pageName = "Overview"
+  if (location.pathname.includes("components")) pageName = "UI Components"
+  else if (location.pathname.includes("settings")) pageName = "Settings"
+  else if (location.pathname.includes("profile")) pageName = "Profile"
+
   return (
     <>
       <header className={styles.layout.header}>
         <div className="flex items-center gap-4 w-1/2">
-          <button onClick={() => layoutStore.toggleSidebar()} className="md:hidden bg-bgbase rounded-xl w-9 h-9 flex items-center justify-center text-gray-600">
+          <button onClick={() => layoutStore.toggleSidebar()} className="md:hidden bg-bgbase rounded-xl w-9 h-9 flex items-center justify-center text-gray-600 flex-shrink-0">
             <Menu size={18} />
           </button>
+          
+          {layoutStore.breadCrumb && (
+             <div className="hidden md:flex items-center text-sm font-semibold text-gray-500 whitespace-nowrap mr-2">
+                <Link to="/" className="hover:text-primary hover:underline transition-all">Dashboard</Link> &nbsp;&nbsp;/&nbsp;&nbsp; <span className="text-primary ml-2">{pageName}</span>
+             </div>
+          )}
           <div className="relative w-full max-w-md hidden sm:block">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
             <input 

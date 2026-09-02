@@ -81,18 +81,7 @@ const SettingsPage = observer(() => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-sm font-semibold text-dark">Dark Sidebar</h3>
-                <p className="text-xs text-gray-500">Force sidebar to be dark</p>
-              </div>
-              <div 
-                className={`w-12 h-6 rounded-full relative flex items-center cursor-pointer transition-colors ${layoutStore.darkSidebar ? sStyles.switchTrackActive : sStyles.switchTrackInactive}`}
-                onClick={() => layoutStore.setDarkSidebar(!layoutStore.darkSidebar)}
-              >
-                <div className={`w-4 h-4 rounded-full absolute shadow-sm transition-all ${themeName === 'neobrutalism' ? 'bg-black rounded-none border-2 border-black w-3 h-5' : 'bg-white'} ${layoutStore.darkSidebar ? 'right-1' : 'left-1'}`}></div>
-              </div>
-            </div>
+
             
             <div className="flex items-center justify-between">
               <div>

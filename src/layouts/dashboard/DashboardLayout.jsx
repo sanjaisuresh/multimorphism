@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite'
 import { useStore } from '@/store'
 import Sidebar from './Sidebar'
 import Header from './Header'
-import { useLocation, Link, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { Sheet, SheetContent } from '@/components/ui/sheet'
 import { useTheme } from '@/providers/ThemeProvider'
 
@@ -12,12 +12,6 @@ const DashboardLayout = observer(() => {
 
   const isHorizontal = themeLayout === 'horizontal'
   const { styles } = useTheme()
-  const location = useLocation()
-
-  let pageName = "Overview"
-  if (location.pathname.includes("components")) pageName = "UI Components"
-  else if (location.pathname.includes("settings")) pageName = "Settings"
-  else if (location.pathname.includes("profile")) pageName = "Profile"
 
   return (
     <div className={styles.layout.app}>
@@ -33,11 +27,6 @@ const DashboardLayout = observer(() => {
 
       <div className="flex-1 flex flex-col h-full overflow-hidden relative">
         <Header />
-        {isHorizontal && (
-          <div className={styles.layout.breadcrumb}>
-             <Link to="/" className="hover:text-primary hover:underline transition-all">Dashboard</Link> &nbsp;&nbsp;/&nbsp;&nbsp; <span className="text-primary ml-2">{pageName}</span>
-          </div>
-        )}
         <main className="flex-1 overflow-y-auto p-6">
           <div className={`mx-auto w-full h-full transition-all duration-300 ${themeStretch ? 'max-w-full' : 'max-w-[1200px]'}`}>
             <Outlet />
