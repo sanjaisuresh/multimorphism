@@ -11,7 +11,7 @@ class ProfileStore {
     role: "Software Engineer",
     avatar: "SS",
     cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    about: "Passionate about building beautiful, interactive user interfaces with modern web technologies. Exploring Claymorphism and 3D UI designs.",
+    about: "Passionate about building beautiful, interactive user interfaces with modern web technologies. Exploring Multimorphism and 18-in-1 UI architectures.",
     location: "India, Coimbatore",
     email: "sanjaisuresh1062@gmail.com",
     website: "https://example.com",
@@ -30,7 +30,7 @@ class ProfileStore {
   ]
 
   projects = [
-    { id: 1, title: "Claymorphism Dashboard", desc: "A modern React dashboard with 3D UI effects.", progress: 100, team: ["DC", "SL"] },
+    { id: 1, title: "Multimorphism Dashboard", desc: "A modern React dashboard with 18 dynamic UI effects.", progress: 100, team: ["DC", "SL"] },
     { id: 2, flow: "Data Pipeline", desc: "Analytics dashboard for the new sales flow.", progress: 75, team: ["AD", "JW"] },
     { id: 3, title: "E-Commerce Theme", desc: "Building a beautiful storefront template.", progress: 40, team: ["SL"] },
   ]

@@ -72,7 +72,7 @@ const Profile = observer(() => {
               <TypographyP>{user.about}</TypographyP>
               <TypographyP className="mt-4">
                 I specialize in front-end development, specifically focusing on complex state management, 
-                animations, and design systems like Claymorphism to bring UIs to life.
+                animations, and modern design systems to bring UIs to life.
               </TypographyP>
             </Card>
             <Card className="flex flex-col gap-5">

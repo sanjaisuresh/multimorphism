@@ -60,7 +60,7 @@ const ComponentShowcase = () => {
       <div className="flex items-center justify-between mb-8">
         <div>
           <TypographyH2>UI Component Showcase 🎨</TypographyH2>
-          <TypographyP>Previewing the base Claymorphism building blocks via modular components.</TypographyP>
+          <TypographyP>Previewing the base UI building blocks via modular components.</TypographyP>
         </div>
       </div>
       
@@ -233,7 +233,7 @@ const ComponentShowcase = () => {
                   </TabsList>
                   <TabsContent value="account">
                     <div className="p-4 bg-white rounded-xl shadow-clay-base mt-4 text-sm text-gray-600 text-center">
-                      Account settings panel using claymorphism
+                      Account settings panel using modern UI
                     </div>
                   </TabsContent>
                   <TabsContent value="password">
@@ -256,14 +256,14 @@ const ComponentShowcase = () => {
                     </CollapsibleTrigger>
                   </div>
                   <div className="rounded-xl border border-white/50 px-4 py-3 font-mono text-sm shadow-clay-inset bg-bgbase">
-                    @claymorphism/ui
+                    @multimorphism/ui
                   </div>
                   <CollapsibleContent className="space-y-2">
                     <div className="rounded-xl border border-white/50 px-4 py-3 font-mono text-sm shadow-clay-inset bg-bgbase">
-                      @claymorphism/colors
+                      @multimorphism/colors
                     </div>
                     <div className="rounded-xl border border-white/50 px-4 py-3 font-mono text-sm shadow-clay-inset bg-bgbase">
-                      @claymorphism/icons
+                      @multimorphism/icons
                     </div>
                   </CollapsibleContent>
                 </Collapsible>
@@ -350,7 +350,7 @@ const ComponentShowcase = () => {
                 </SheetTrigger>
                 <SheetContent>
                   <SheetHeader>
-                    <SheetTitle>Claymorphism Sheet</SheetTitle>
+                    <SheetTitle>Multimorphism Sheet</SheetTitle>
                     <SheetDescription>
                       This slides in from the right with a soft clay shadow.
                     </SheetDescription>

@@ -14,6 +14,10 @@ import { skeuomorphismTheme } from '@/styles/themes/skeuomorphism'
 import { wireframeTheme } from '@/styles/themes/wireframe'
 import { monochromeTheme } from '@/styles/themes/monochrome'
 import { memphisTheme } from '@/styles/themes/memphis'
+import { spatialTheme } from '@/styles/themes/spatial'
+import { pixelTheme } from '@/styles/themes/pixel'
+import { holographicTheme } from '@/styles/themes/holographic'
+import { organicTheme } from '@/styles/themes/organic'
 
 const THEMES = {
   claymorphism: claymorphismTheme,
@@ -30,6 +34,10 @@ const THEMES = {
   wireframe: wireframeTheme,
   monochrome: monochromeTheme,
   memphis: memphisTheme,
+  spatial: spatialTheme,
+  pixel: pixelTheme,
+  holographic: holographicTheme,
+  organic: organicTheme,
 }
 
 const ThemeContext = createContext({

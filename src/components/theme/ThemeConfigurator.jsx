@@ -40,6 +40,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('claymorphism')
               themeStore.setThemeColorPresets('blue')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-clay rounded-2xl shadow-[5px_5px_10px_#0b1121,-5px_-5px_10px_#314155,inset_2px_2px_4px_rgba(255,255,255,0.1)] hover:scale-105 px-2 ${themeName === 'claymorphism' ? 'ring-2 ring-primary ring-offset-2 ring-offset-bgbase' : ''}`}
           >
@@ -51,6 +52,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('neobrutalism')
               themeStore.setThemeColorPresets('yellow')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-[#FFDF00] border-4 border-black text-black font-bold uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none px-2 ${themeName === 'neobrutalism' ? 'outline outline-4 outline-black outline-offset-4' : ''}`}
           >
@@ -62,6 +64,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('glassmorphism')
               themeStore.setThemeColorPresets('purple')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-white/40 dark:bg-white/10 backdrop-blur-md rounded-2xl border border-white/60 dark:border-white/20 shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:bg-white/60 hover:-translate-y-1 px-2 ${themeName === 'glassmorphism' ? 'ring-2 ring-white ring-offset-2 ring-offset-bgbase' : ''}`}
           >
@@ -73,6 +76,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('neumorphism')
               themeStore.setThemeColorPresets('cyan')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-[#e0e5ec] dark:bg-[#1a1b1e] rounded-2xl shadow-[8px_8px_16px_#b8bcc2,-8px_-8px_16px_#ffffff] dark:shadow-[8px_8px_16px_#0d0e0f,-8px_-8px_16px_#27282d] hover:shadow-[inset_8px_8px_16px_#b8bcc2,inset_-8px_-8px_16px_#ffffff] dark:hover:shadow-[inset_8px_8px_16px_#0d0e0f,inset_-8px_-8px_16px_#27282d] px-2 ${themeName === 'neumorphism' ? 'ring-2 ring-primary ring-offset-2 ring-offset-bgbase' : ''}`}
           >
@@ -96,6 +100,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('bauhaus')
               themeStore.setThemeColorPresets('red')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-white dark:bg-black rounded-none border-l-8 border-red-500 shadow-sm hover:shadow-md hover:translate-x-1 px-2 ${themeName === 'bauhaus' ? 'ring-1 ring-black dark:ring-white ring-offset-4 ring-offset-bgbase' : ''}`}
           >
@@ -107,6 +112,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('bento')
               themeStore.setThemeColorPresets('blue')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-[#F2F2F7] dark:bg-[#1C1C1E] rounded-[2rem] border border-black/5 dark:border-white/5 shadow-sm hover:shadow-md hover:scale-105 px-2 ${themeName === 'bento' ? 'ring-2 ring-primary ring-offset-2 ring-offset-bgbase' : ''}`}
           >
@@ -118,6 +124,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('material')
               themeStore.setThemeColorPresets('green')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-[#F3F4E9] dark:bg-[#2F3127] rounded-full shadow-sm hover:bg-[#E8E9DB] dark:hover:bg-[#3F4135] px-2 ${themeName === 'material' ? 'ring-2 ring-[#76786A] dark:ring-[#909281] ring-offset-2 ring-offset-bgbase' : ''}`}
           >
@@ -129,6 +136,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('aurora')
               themeStore.setThemeColorPresets('purple')
+              themeStore.setThemeMode('dark')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-gradient-to-br from-purple-400/30 to-blue-400/30 backdrop-blur-xl rounded-[2rem] border border-white/40 shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] px-2 ${themeName === 'aurora' ? 'ring-2 ring-white ring-offset-2 ring-offset-bgbase scale-105' : ''}`}
           >
@@ -140,6 +148,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('frutigeraero')
               themeStore.setThemeColorPresets('cyan')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-gradient-to-b from-white to-[#E0F2FE] dark:from-[#1A2E44] dark:to-[#112233] rounded-full border border-white/50 shadow-[inset_0_2px_10px_rgba(255,255,255,0.8),0_4px_10px_rgba(0,0,0,0.1)] hover:scale-105 px-2 ${themeName === 'frutigeraero' ? 'ring-2 ring-cyan-500 ring-offset-2 ring-offset-bgbase' : ''}`}
           >
@@ -151,6 +160,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('skeuomorphism')
               themeStore.setThemeColorPresets('orange')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-gradient-to-b from-[#ffffff] to-[#e6e6e6] dark:from-[#333333] dark:to-[#1a1a1a] rounded-xl border border-[#cccccc] dark:border-[#111111] shadow-[inset_0_1px_0_rgba(255,255,255,1),0_4px_6px_rgba(0,0,0,0.2)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_6px_rgba(0,0,0,0.6)] active:translate-y-1 active:shadow-[inset_0_4px_6px_rgba(0,0,0,0.2)] px-2 ${themeName === 'skeuomorphism' ? 'ring-2 ring-orange-500 ring-offset-2 ring-offset-bgbase' : ''}`}
           >
@@ -162,6 +172,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('wireframe')
               themeStore.setThemeColorPresets('cyan')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-transparent rounded-none border-2 border-dashed border-[#000000] dark:border-[#ffffff] hover:bg-black/5 dark:hover:bg-white/5 px-2 ${themeName === 'wireframe' ? 'ring-2 ring-[#000000] dark:ring-[#ffffff] ring-offset-4 ring-offset-bgbase' : ''}`}
           >
@@ -173,6 +184,7 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('monochrome')
               themeStore.setThemeColorPresets('blue')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-white dark:bg-black rounded-none border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black group px-2 ${themeName === 'monochrome' ? 'ring-2 ring-black dark:ring-white ring-offset-2 ring-offset-bgbase' : ''}`}
           >
@@ -184,10 +196,59 @@ export const ThemeConfigurator = observer(({ inSettings = false }) => {
             onClick={() => {
               setTheme('memphis')
               themeStore.setThemeColorPresets('yellow')
+              themeStore.setThemeMode('light')
             }}
             className={`h-20 flex items-center justify-center transition-all bg-[#ff6b6b] rounded-tl-[1.5rem] rounded-br-[1.5rem] border-4 border-black shadow-[4px_4px_0_0_#000000] hover:-translate-y-1 hover:translate-x-1 hover:shadow-[6px_6px_0_0_#000000] px-2 ${themeName === 'memphis' ? 'ring-2 ring-black ring-offset-4 ring-offset-bgbase' : ''}`}
           >
             <span className="font-black text-sm text-white uppercase tracking-wider w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Memphis</span>
+          </button>
+
+          {/* Spatial Preview */}
+          <button 
+            onClick={() => {
+              setTheme('spatial')
+              themeStore.setThemeColorPresets('blue')
+              themeStore.setThemeMode('dark')
+            }}
+            className={`h-20 flex items-center justify-center transition-all bg-white/10 dark:bg-black/30 backdrop-blur-2xl rounded-[1.5rem] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2),0_10px_20px_rgba(0,0,0,0.3)] hover:scale-105 px-2 ${themeName === 'spatial' ? 'ring-2 ring-white ring-offset-2 ring-offset-bgbase' : ''}`}
+          >
+            <span className="font-medium text-sm text-gray-800 dark:text-white drop-shadow-md w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Spatial (VisionOS)</span>
+          </button>
+
+          {/* Pixel Preview */}
+          <button 
+            onClick={() => {
+              setTheme('pixel')
+              themeStore.setThemeColorPresets('red')
+              themeStore.setThemeMode('light')
+            }}
+            className={`h-20 flex items-center justify-center transition-all bg-white dark:bg-black rounded-none border-4 border-black dark:border-white shadow-[4px_4px_0_0_rgba(0,0,0,1)] dark:shadow-[4px_4px_0_0_rgba(255,255,255,1)] hover:-translate-y-1 active:translate-y-1 active:shadow-none px-2 ${themeName === 'pixel' ? 'ring-2 ring-black dark:ring-white ring-offset-4 ring-offset-bgbase' : ''}`}
+          >
+            <span className="font-black font-mono text-xs uppercase text-black dark:text-white w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">8-Bit Pixel</span>
+          </button>
+
+          {/* Holographic Preview */}
+          <button 
+            onClick={() => {
+              setTheme('holographic')
+              themeStore.setThemeColorPresets('purple')
+              themeStore.setThemeMode('dark')
+            }}
+            className={`h-20 flex items-center justify-center transition-all bg-gradient-to-br from-fuchsia-400/80 via-cyan-400/80 to-purple-500/80 backdrop-blur-xl rounded-2xl border-2 border-white/60 shadow-[0_5px_15px_rgba(255,0,255,0.4)] hover:shadow-[0_10px_25px_rgba(255,0,255,0.6)] px-2 ${themeName === 'holographic' ? 'ring-2 ring-white ring-offset-2 ring-offset-bgbase scale-105' : ''}`}
+          >
+            <span className="font-extrabold text-sm text-white drop-shadow-lg w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Holographic</span>
+          </button>
+
+          {/* Organic Preview */}
+          <button 
+            onClick={() => {
+              setTheme('organic')
+              themeStore.setThemeColorPresets('green')
+              themeStore.setThemeMode('light')
+            }}
+            className={`h-20 flex items-center justify-center transition-all bg-[#F9F6F0] dark:bg-[#1E1D1B] rounded-[2rem] border border-[#E8DFD0] dark:border-[#33312E] shadow-[0_4px_15px_rgba(139,121,94,0.05)] hover:shadow-[0_8px_20px_rgba(139,121,94,0.1)] px-2 ${themeName === 'organic' ? 'ring-2 ring-[#7A6A58] ring-offset-2 ring-offset-bgbase' : ''}`}
+          >
+            <span className="font-medium text-sm text-[#5C5042] dark:text-[#E2D9C8] w-full overflow-hidden text-ellipsis whitespace-nowrap text-center">Organic</span>
           </button>
         </div>
       </div>

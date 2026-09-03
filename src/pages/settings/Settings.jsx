@@ -28,7 +28,7 @@ const SettingsPage = observer(() => {
     <div className={`p-6 md:p-8 flex flex-col gap-8 mx-auto w-full animate-fade-in ${layoutStore.themeStretch ? 'max-w-none' : 'max-w-5xl'}`}>
       <div className="flex flex-col gap-2">
         <TypographyH2>Settings</TypographyH2>
-        <TypographyP>Customize your Claymorphism workspace experience.</TypographyP>
+        <TypographyP>Customize your workspace experience.</TypographyP>
       </div>
 
       <ThemeConfigurator inSettings={true} />
