@@ -3,7 +3,7 @@
 A highly customizable, multi-themed React dashboard layout and UI component library. Multimorphism allows you to seamlessly switch between completely different design aesthetics (like Neobrutalism, Wireframe, Claymorphism, Aurora, and more) at runtime.
 
 ## Features
-- 🎨 **14+ Dynamic Themes:** Instantly swap between Neobrutalism, Wireframe, Glassmorphism, Retro, Bauhaus, Bento, Aurora, and many more.
+- 🎨 **18+ Dynamic Themes:** Instantly swap between Neobrutalism, Wireframe, Glassmorphism, Retro, Bauhaus, Bento, Aurora, Spatial, 8-Bit Pixel, Holographic Foil, Ecomorphism and many more.
 - 🧩 **Themed Components:** Includes tailored forms, charts, sidebars, and dashboards that automatically adapt to your chosen design aesthetic.
 - ⚡ **Built for Speed:** Powered by React, Vite, and Tailwind CSS.
 - 🎛️ **Live Configurator:** Swap themes and tweak layouts in real-time.
